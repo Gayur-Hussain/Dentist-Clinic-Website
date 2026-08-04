@@ -4,105 +4,66 @@ import { motion } from "framer-motion";
 
 export default function AboutDoctor() {
   return (
-    <section className="py-section-gap overflow-hidden bg-white" id="about">
-      <div className="max-w-container-max mx-auto px-margin-page grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+    <section className="py-24 md:py-36 bg-white text-[#1d1d1f] border-t border-black/5" id="about">
+      <div className="max-w-[1120px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        {/* Doctor Photography */}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="relative"
+          transition={{ duration: 0.7 }}
+          className="lg:col-span-5"
         >
-          <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl shadow-[#00685f]/5">
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-black/5 bg-[#f5f5f7]">
             <img
-              className="w-full h-full object-cover"
-              alt="Dr. Rohan Sharma"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn_EmJ_lXoUdC-KuBI1bk-EWQ67jwisteDJO1nz4qxvvA7QvoC7PLy6dB6CUPoIOiH9ug2P9_RY-ENpRIoCCaItkHRGfvTs4jwzy-dpXdT8FyDJVAkE5_Wa6UWG9MXnI0uhSN-52PsTGbeLFms4CRzwIaD3BQEusIyFCRm-QCz_V14EBIKGFFOytLBojratYq1HrdEfehFvFEFZ2UVS7POyx-Yt7DlLtj2kMuIFA9Iju2iDYysUGmBxmaVg0wwswvVeX8GZED5C6w"
+              src="/images/dr_portrait_smile.jpg"
+              alt="Dr. Ananya Sharma"
+              className="w-full h-[450px] sm:h-[540px] object-cover"
             />
           </div>
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="absolute -right-10 top-1/4 bg-white/80 backdrop-blur-md p-8 rounded-3xl border border-[#eaefed] shadow-2xl max-w-[280px] hidden md:block"
-          >
-            <div className="text-primary text-h2 font-bold mb-1">15+</div>
-            <div className="text-on-surface-variant font-label-sm">
-              Years of Clinical Excellence
-            </div>
-            <div className="mt-4 pt-4 border-t border-primary/10">
-              <p className="italic text-on-surface-variant text-sm">
-                "Clinical precision meets patient empathy. Your comfort is our
-                absolute priority."
-              </p>
-              <p className="mt-2 font-bold text-primary text-xs">
-                — Dr. Rohan Sharma
-              </p>
-            </div>
-          </motion.div>
         </motion.div>
 
+        {/* Doctor Bio Details */}
         <motion.div
-          initial={{ opacity: 0, x: 50 }}
+          initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="space-y-stack-md"
+          transition={{ duration: 0.7 }}
+          className="lg:col-span-7 space-y-6 text-left"
         >
-          <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">
-            Lead Clinical Director
-          </span>
-          <h2 className="font-h2 text-h2">Precision and Artistry Combined</h2>
-          <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-            Dr. Rohan Sharma founded this practice on the principle that
-            dentistry should combine clinical excellence with aesthetic
-            artistry. Having completed his Master of Dental Surgery (MDS) from
-            the prestigious Maulana Azad Institute of Dental Sciences (MAIDS),
-            New Delhi, he specializes in minimally invasive cosmetic smile
-            makeovers and advanced implantology.
-          </p>
-          <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <span className="material-symbols-outlined text-[18px]">
-                  check
-                </span>
-              </div>
-              <p className="text-body-md font-medium text-[#171d1c]">
-                MDS in Prosthodontics & Implantology, MAIDS New Delhi
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <span className="material-symbols-outlined text-[18px]">
-                  check
-                </span>
-              </div>
-              <p className="text-body-md font-medium text-[#171d1c]">
-                Fellow, International Congress of Oral Implantologists (ICOI)
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                <span className="material-symbols-outlined text-[18px]">
-                  check
-                </span>
-              </div>
-              <p className="text-body-md font-medium text-[#171d1c]">
-                Specialist in Guided Bone Regeneration & Digital Smile Design
-              </p>
-            </div>
-          </div>
-          <div className="pt-6 border-t border-[#eaefed] flex flex-col gap-1">
-            <span className="font-serif italic text-3xl text-primary font-medium tracking-wide">
-              Dr. Rohan Sharma
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#86868b] block mb-2">
+              Lead Clinical Specialist
             </span>
-            <p className="text-on-surface-variant text-xs font-semibold uppercase tracking-wider">
-              MDS, BDS — Lead Clinical Director
+            <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f] mb-4">
+              Dr. Ananya Sharma
+            </h2>
+            <p className="text-sm font-semibold text-[#00685f]">
+              MDS (MAIDS, New Delhi) • Prosthodontics & Implantology
             </p>
           </div>
+
+          <p className="text-[#515154] text-base sm:text-lg font-normal leading-relaxed">
+            With over 15 years of surgical and aesthetic practice, Dr. Ananya Sharma founded Lumina Dental to offer patients a serene, painless medical environment combined with state-of-the-art 3D optical scanning technology.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-black/5">
+            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/5">
+              <span className="text-2xl font-bold text-[#1d1d1f] block">15+</span>
+              <span className="text-xs text-[#86868b]">Years Practice</span>
+            </div>
+            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/5">
+              <span className="text-2xl font-bold text-[#1d1d1f] block">MAIDS</span>
+              <span className="text-xs text-[#86868b]">MDS Gold Medalist</span>
+            </div>
+            <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/5">
+              <span className="text-2xl font-bold text-[#00685f] block">4,500+</span>
+              <span className="text-xs text-[#86868b]">Smiles Restored</span>
+            </div>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

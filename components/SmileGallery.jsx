@@ -2,37 +2,27 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
-const galleryItems = [
+const transformations = [
   {
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuC0HZcEYuv0h8fvxUxkQk-_qdpAGK1hTV6G-MFwq_V3d3yryZD0F9OcHwoeeVIPsnbEUI-raZoGeeTAXysZmJYa5_cRB1Kc0GMLlFBoFD7-KdS5fD4nN4HU445eNmgUvESJoQPoXgiVbM3WAzZdOK3qmGcpudUJ9juwdKqu3Puv5-_ptq3HuNfl_Lhm64gaLFuidcBkxfS71oKxChpvCp-9zJDksckxpq5xLZUQSNURzIXIE1DlNSGDy8EPehWTZ-7Nk3O0ANN40G8",
-    tag1: "Veneers",
-    tag2: "14 Days",
     title: "Full Smile Makeover",
-    description: "Corrected severe gaps, chips, and misalignment with custom ultra-thin porcelain veneers.",
+    subtitle: "Custom Porcelain Veneers",
+    treatmentTime: "14 Days",
+    description: "Corrected deep discoloration and uneven alignment with custom ultra-thin porcelain veneers.",
+    beforeImage: "/images/makeover_before.jpg",
+    afterImage: "/images/makeover_after.jpg",
   },
   {
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuCqJsIBtAzUo8YDOQiLLC7scKVlUIL6u61ve2L_ku9Zfd9s69VsbimrIDkQGCjW-Xr37EZI87jhkc5oGsZr3AVBEgDnSqfcrma3eDukmRhocIhTpTGAkqdGBjKV4IFR9bkJP2qY8ZxsfU2-66UMFy-bqTrtqR4UyCuqb3GKKtG8KDgBxLehjbRhrE5EJiuY1ahJ98HcldtRKnnFASVYwjCke0b0XIL1rUKNdMxpwCUUssDiKN5nNlxgb4T2UeQ_TPCMPMpqvSL3SOc",
-    tag1: "Implants",
-    tag2: "3 Months",
-    title: "Missing Tooth Restoration",
-    description: "Replaced a fractured premolar with a single titanium implant and matching porcelain crown.",
-  },
-  {
-    image:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuB1XAMa-Cix7kDhpd2Lt-ldbSJfwjMDNqNrxMhCXGwpAQtRbhIV17niZh3IztsyY4VuJ_wBLh97yOpm_8loh-CUnsWc3Z_q9GKVwzofbPwBjbwagxmT3Jnx6TCEBlRHE2VNA6KYV2WqOpORnPMnJbD6jV9Ak2by9pwbqGxcu2Kn_qGVxD0_xP9rD8GXd6BuKHq8tO_7o634ybdmpYoIVbi73yk1vPI5ozOBuusqyAwZc5J8f3860YE6ecewskXtBaT1se_Ee2EKNN4",
-    tag1: "Whitening",
-    tag2: "1 Session",
     title: "Power Laser Whitening",
-    description: "Lifted deep developmental and lifestyle stains in a single 60-minute in-chair laser session.",
+    subtitle: "In-Chair Laser Therapy",
+    treatmentTime: "1 Session",
+    description: "Lifted deep lifestyle stains up to 8 shades brighter in a single 60-minute session.",
+    beforeImage: "/images/whitening_before.jpg",
+    afterImage: "/images/whitening_after.jpg",
   },
 ];
 
-// Interactive Before/After image comparison slider
-function BeforeAfterSlider({ image, title }) {
+function TrueBeforeAfterSlider({ beforeImage, afterImage, title }) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -57,50 +47,45 @@ function BeforeAfterSlider({ image, title }) {
 
   return (
     <div
-      className="relative overflow-hidden rounded-[32px] aspect-video w-full select-none cursor-ew-resize border border-[#eaefed]"
+      className="relative overflow-hidden rounded-3xl aspect-[4/3] w-full select-none cursor-ew-resize border border-black/10 shadow-sm bg-[#f5f5f7]"
       onTouchMove={handleTouchMove}
       onMouseMove={handleMouseMove}
       onMouseDown={() => setIsDragging(true)}
       onMouseUp={() => setIsDragging(false)}
       onMouseLeave={() => setIsDragging(false)}
     >
-      {/* After Image (Full Color & Whiteness) */}
+      {/* Real After Image (Bottom Layer) */}
       <img
-        src={image}
+        src={afterImage}
         alt={`${title} After`}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
-      <div className="absolute top-4 right-4 bg-[#00685f] text-white text-[10px] font-bold px-3 py-1 rounded-full z-20 shadow-md">
+      <div className="absolute top-4 right-4 bg-[#00685f] text-white text-[10px] font-bold px-3 py-1 rounded-full z-20 shadow-sm">
         AFTER
       </div>
 
-      {/* Before Image (Clipped Left with Staining Filter) */}
+      {/* Real Before Image (Clipped Layer Top) */}
       <div
         className="absolute inset-0 overflow-hidden pointer-events-none"
         style={{ width: `${sliderPosition}%` }}
       >
         <img
-          src={image}
+          src={beforeImage}
           alt={`${title} Before`}
           className="absolute inset-0 w-full h-full object-cover pointer-events-none max-w-none"
-          style={{
-            width: "100%",
-            height: "100%",
-            // Applies yellowing/dimming filters to simulate typical cosmetic "Before" states
-            filter: "saturate(0.7) contrast(0.9) sepia(0.32) hue-rotate(-12deg) brightness(0.85)",
-          }}
+          style={{ width: "100%", height: "100%" }}
         />
-        <div className="absolute top-4 left-4 bg-[#b05e3d] text-white text-[10px] font-bold px-3 py-1 rounded-full z-20 shadow-md">
+        <div className="absolute top-4 left-4 bg-[#1d1d1f] text-white text-[10px] font-bold px-3 py-1 rounded-full z-20 shadow-sm">
           BEFORE
         </div>
       </div>
 
       {/* Drag Bar Handle */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20"
+        className="absolute top-0 bottom-0 w-0.5 bg-white cursor-ew-resize z-20"
         style={{ left: `${sliderPosition}%` }}
       >
-        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white shadow-xl flex items-center justify-center border border-[#eaefed] text-primary">
+        <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-white shadow-lg flex items-center justify-center border border-black/10 text-[#00685f]">
           <span className="material-symbols-outlined text-[16px] font-bold select-none">
             swap_horiz
           </span>
@@ -112,64 +97,72 @@ function BeforeAfterSlider({ image, title }) {
 
 export default function SmileGallery() {
   return (
-    <section className="py-section-gap bg-surface" id="gallery">
-      <div className="max-w-container-max mx-auto px-margin-page">
-        <div className="flex justify-between items-end mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+    <section className="py-24 md:py-36 bg-white text-[#1d1d1f] border-t border-black/5" id="gallery">
+      <div className="max-w-[1120px] mx-auto px-6">
+        
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            className="text-xs font-semibold uppercase tracking-widest text-[#86868b] block mb-3"
           >
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">
-              Transformation Gallery
-            </span>
-            <h2 className="font-h2 text-h2 mt-4">Real Results, Real Smiles</h2>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            Transformation Gallery
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f] mb-4"
           >
-            <Button
-              variant="outline"
-              className="hidden md:flex px-8 py-6 rounded-full border-primary text-primary hover:bg-primary hover:text-white transition-all text-body-md"
-            >
-              View Case Studies
-            </Button>
-          </motion.div>
+            Real Results, Real Smiles.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-[#515154] text-base sm:text-lg font-normal"
+          >
+            Drag the handle to compare real before & after patient transformations.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-          {galleryItems.map((item, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          {transformations.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group"
+              className="bg-[#f5f5f7] p-6 rounded-3xl border border-black/5 flex flex-col justify-between"
             >
-              {/* Interactive Before/After Slider */}
-              <div className="mb-6 relative">
-                <BeforeAfterSlider image={item.image} title={item.title} />
-                
-                {/* Floating Tags */}
-                <div className="absolute bottom-4 left-4 flex gap-2 z-10">
-                  <span className="px-3 py-1 rounded-full bg-white/30 backdrop-blur-md text-[#171d1c] text-[11px] font-bold border border-white/20">
-                    {item.tag1}
+              <div className="mb-6">
+                <TrueBeforeAfterSlider
+                  beforeImage={item.beforeImage}
+                  afterImage={item.afterImage}
+                  title={item.title}
+                />
+              </div>
+
+              <div>
+                <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-semibold text-[#00685f] uppercase tracking-wider">
+                    {item.subtitle}
                   </span>
-                  <span className="px-3 py-1 rounded-full bg-white/30 backdrop-blur-md text-[#171d1c] text-[11px] font-bold border border-white/20">
-                    {item.tag2}
+                  <span className="text-xs font-bold text-[#86868b] bg-white px-3 py-1 rounded-full border border-black/5">
+                    {item.treatmentTime}
                   </span>
                 </div>
+                <h3 className="text-xl font-bold text-[#1d1d1f] mb-2">{item.title}</h3>
+                <p className="text-sm text-[#515154] leading-relaxed">{item.description}</p>
               </div>
-              <h4 className="font-h3 text-xl font-bold text-[#171d1c] mb-2">{item.title}</h4>
-              <p className="text-on-surface-variant text-sm leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

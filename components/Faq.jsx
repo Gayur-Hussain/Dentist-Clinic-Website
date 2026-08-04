@@ -10,89 +10,86 @@ import {
 
 export default function Faq() {
   return (
-    <section className="py-section-gap">
-      <div className="max-w-container-max mx-auto px-margin-page max-w-4xl">
+    <section className="py-24 md:py-36 bg-[#f5f5f7] text-[#1d1d1f] border-t border-black/5" id="faq">
+      <div className="max-w-[800px] mx-auto px-6">
+        
+        {/* Section Title */}
         <div className="text-center mb-16">
           <motion.span
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]"
+            className="text-xs font-semibold uppercase tracking-widest text-[#86868b] block mb-3"
           >
             Common Queries
           </motion.span>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="font-h2 text-h2 mt-4"
+            className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f]"
           >
             Frequently Asked Questions
           </motion.h2>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-4"
         >
           <Accordion type="single" collapsible className="w-full space-y-4">
+            
             <AccordionItem
               value="item-1"
-              className="p-2 px-6 bg-white border border-outline-variant rounded-2xl"
+              className="bg-white border border-black/5 rounded-2xl px-6 py-1 cursor-pointer transition-colors hover:border-[#00685f]/30"
             >
-              <AccordionTrigger className="hover:no-underline font-h3 text-h3 text-primary">
-                How long does a dental implant procedure take?
+              <AccordionTrigger className="hover:no-underline text-left text-base sm:text-lg font-bold text-[#1d1d1f] cursor-pointer py-5">
+                Is 3D optical scanning painful or uncomfortable?
               </AccordionTrigger>
-              <AccordionContent className="text-on-surface-variant font-body-md text-base">
-                The entire process typically spans 3-6 months to allow for
-                proper healing and integration, although the actual surgery is
-                completed in a single visit.
+              <AccordionContent className="text-sm text-[#515154] leading-relaxed pb-5">
+                Not at all. The 3D intraoral scanner is a compact wand that glides smoothly over your teeth without touching soft tissue. It replaces messy putty impressions completely.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem
               value="item-2"
-              className="p-2 px-6 bg-white border border-outline-variant rounded-2xl"
+              className="bg-white border border-black/5 rounded-2xl px-6 py-1 cursor-pointer transition-colors hover:border-[#00685f]/30"
             >
-              <AccordionTrigger className="hover:no-underline font-h3 text-h3 text-on-background">
-                Do you offer financing for major treatments?
+              <AccordionTrigger className="hover:no-underline text-left text-base sm:text-lg font-bold text-[#1d1d1f] cursor-pointer py-5">
+                How long does a laser whitening session take?
               </AccordionTrigger>
-              <AccordionContent className="text-on-surface-variant font-body-md text-base">
-                Yes, we offer flexible payment plans to suit your budget. Please
-                contact our office for more detailed information.
+              <AccordionContent className="text-sm text-[#515154] leading-relaxed pb-5">
+                A full in-chair session takes approximately 60 minutes. We apply a protective layer to your gums and perform three 15-minute whitening cycles for up to 8 shades of brightening.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem
               value="item-3"
-              className="p-2 px-6 bg-white border border-outline-variant rounded-2xl"
+              className="bg-white border border-black/5 rounded-2xl px-6 py-1 cursor-pointer transition-colors hover:border-[#00685f]/30"
             >
-              <AccordionTrigger className="hover:no-underline font-h3 text-h3 text-on-background">
-                Is laser teeth whitening safe for sensitive teeth?
+              <AccordionTrigger className="hover:no-underline text-left text-base sm:text-lg font-bold text-[#1d1d1f] cursor-pointer py-5">
+                Are root canal procedures truly pain-free?
               </AccordionTrigger>
-              <AccordionContent className="text-on-surface-variant font-body-md text-base">
-                Absolutely. Our advanced laser systems minimize discomfort and
-                we apply desensitizing agents to ensure a comfortable
-                experience.
+              <AccordionContent className="text-sm text-[#515154] leading-relaxed pb-5">
+                Yes. With modern rotary endodontic instruments and computerized local anaesthesia, root canals at Lumina Dental feel no different than a standard dental filling.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem
               value="item-4"
-              className="p-2 px-6 bg-white border border-outline-variant rounded-2xl"
+              className="bg-white border border-black/5 rounded-2xl px-6 py-1 cursor-pointer transition-colors hover:border-[#00685f]/30"
             >
-              <AccordionTrigger className="hover:no-underline font-h3 text-h3 text-on-background">
-                What should I do in a dental emergency?
+              <AccordionTrigger className="hover:no-underline text-left text-base sm:text-lg font-bold text-[#1d1d1f] cursor-pointer py-5">
+                How do I schedule an emergency or same-day visit?
               </AccordionTrigger>
-              <AccordionContent className="text-on-surface-variant font-body-md text-base">
-                Contact our emergency hotline immediately. We have an on-call
-                specialist ready 24/7 to address urgent issues.
+              <AccordionContent className="text-sm text-[#515154] leading-relaxed pb-5">
+                Call our 24/7 hotline directly or send us a WhatsApp message. Emergency walk-ins and acute pain cases are prioritized for immediate treatment.
               </AccordionContent>
             </AccordionItem>
+
           </Accordion>
         </motion.div>
       </div>

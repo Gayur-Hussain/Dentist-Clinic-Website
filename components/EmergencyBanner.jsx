@@ -1,50 +1,58 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 export default function EmergencyBanner() {
   return (
-    <section className="py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-container-max mx-auto px-margin-page"
-      >
-        <div className="bg-tertiary text-on-tertiary p-12 rounded-[40px] flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <span className="material-symbols-outlined text-[300px] absolute -right-20 -top-20">
+    <section className="py-16 md:py-24 bg-white">
+      <div className="max-w-[1120px] mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-[#00685f] text-white p-8 sm:p-12 md:p-14 rounded-3xl flex flex-col lg:flex-row justify-between items-center gap-8 relative overflow-hidden shadow-xl"
+        >
+          {/* Subtle background icon */}
+          <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none translate-x-1/4 translate-y-1/4">
+            <span className="material-symbols-outlined text-[240px] md:text-[320px] text-white">
               emergency
             </span>
           </div>
 
-          <div className="relative z-10 text-center md:text-left">
-            <h2 className="font-h2 text-h2 mb-4">Need Urgent Dental Care?</h2>
-            <p className="font-body-lg text-body-lg opacity-90 max-w-lg">
-              We prioritize emergency cases. Call our 24/7 hotline for immediate
-              assistance with pain or injuries.
+          <div className="relative z-10 text-center lg:text-left max-w-xl">
+            <span className="text-xs font-mono uppercase tracking-widest text-emerald-200 block mb-2 font-semibold">
+              24/7 Priority Emergency Care
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold tracking-tight mb-3">
+              Need Urgent Dental Care?
+            </h2>
+            <p className="text-white/80 text-sm sm:text-base font-normal leading-relaxed">
+              We prioritize same-day emergency cases for acute toothache, trauma, or broken teeth in New Delhi.
             </p>
           </div>
 
-          <div className="relative z-10 flex flex-col sm:flex-row gap-4">
+          {/* Fully Responsive Buttons Container */}
+          <div className="relative z-10 w-full lg:w-auto flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center shrink-0">
             <a
-              className="px-10 py-5 bg-white text-tertiary rounded-full font-bold text-lg hover:bg-tertiary-fixed-dim transition-all flex items-center justify-center gap-3"
-              href="tel:+12127558930"
+              href="tel:+919876543210"
+              className="h-12 px-7 bg-white text-[#00685f] rounded-full font-bold text-sm hover:bg-white/95 transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
             >
-              <span className="material-symbols-outlined">call</span>
-              (212) 755-8930
+              <span className="material-symbols-outlined text-[18px]">call</span>
+              <span>+91 98765 43210</span>
             </a>
-            <Button
-              variant="outline"
-              className="px-10 py-7 border-2 border-white/40 text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all bg-transparent"
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-12 px-7 border border-white/40 text-white rounded-full font-bold text-sm hover:bg-white/10 transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
-              WhatsApp Now
-            </Button>
+              <span className="material-symbols-outlined text-[18px]">chat</span>
+              <span>WhatsApp Hotline</span>
+            </a>
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

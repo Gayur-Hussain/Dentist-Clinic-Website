@@ -4,118 +4,99 @@ import { motion } from "framer-motion";
 
 export default function Technology() {
   return (
-    <section className="py-section-gap">
-      <div className="max-w-container-max mx-auto px-margin-page">
-        <div className="flex flex-col md:flex-row gap-20 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+    <section id="technology" className="py-24 md:py-36 bg-white text-[#1d1d1f] border-t border-black/5">
+      <div className="max-w-[1120px] mx-auto px-6">
+        
+        {/* Apple Section Headline */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <motion.span
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex-1 space-y-8"
+            className="text-xs font-semibold uppercase tracking-widest text-[#86868b] block mb-3"
           >
-            <span className="font-label-sm text-label-sm text-primary uppercase tracking-[0.2em]">
-              Next-Gen Infrastructure
-            </span>
-            <h2 className="font-h2 text-h2">
-              Technology That Redefines Precision
-            </h2>
+            Digital Innovation
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-3xl sm:text-5xl font-bold tracking-tight text-[#1d1d1f] mb-4 leading-tight"
+          >
+            3D Optical Scanning. <br />
+            No Putty. No Gagging.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-[#515154] text-base sm:text-lg font-normal leading-relaxed"
+          >
+            A fast 60-second optical scan creates an exact 3D digital model of your teeth with zero discomfort.
+          </motion.p>
+        </div>
 
-            <div className="space-y-6">
-              <div className="flex gap-6">
-                <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
-                  <span className="material-symbols-outlined text-[32px]">
-                    biotech
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-h3 text-h3 text-primary mb-1">
-                    3D Digital Scanning
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    Eliminate messy impressions. Our intraoral scanners create
-                    precise 3D models of your teeth in seconds.
-                  </p>
-                </div>
-              </div>
+        {/* Big Photography Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="rounded-3xl overflow-hidden shadow-xl border border-black/5 mb-16 bg-[#f5f5f7]"
+        >
+          <img
+            src="/images/tech_3d_scanner.jpg"
+            alt="3D Intraoral Scanner Wand"
+            className="w-full h-[320px] sm:h-[460px] object-cover"
+          />
+        </motion.div>
 
-              <div className="flex gap-6">
-                <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
-                  <span className="material-symbols-outlined text-[32px]">
-                    flare
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-h3 text-h3 text-primary mb-1">
-                    Laser Dentistry
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    Minimally invasive treatments for gum disease and whitening,
-                    reducing healing time and discomfort.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="w-16 h-16 shrink-0 rounded-2xl bg-primary/5 flex items-center justify-center text-primary">
-                  <span className="material-symbols-outlined text-[32px]">
-                    shield_moon
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-h3 text-h3 text-primary mb-1">
-                    Advanced Sterilization
-                  </h4>
-                  <p className="text-on-surface-variant">
-                    Hospital-grade sterilization systems that exceed all
-                    international healthcare safety protocols.
-                  </p>
-                </div>
-              </div>
-            </div>
+        {/* 3 Simple Patient Benefit Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="p-8 rounded-2xl bg-[#f5f5f7] border border-black/5"
+          >
+            <span className="text-sm font-bold text-[#00685f] block mb-2">01 / Instant 3D Model</span>
+            <h4 className="text-lg font-bold text-[#1d1d1f] mb-2">See Your Smile First</h4>
+            <p className="text-sm text-[#515154] leading-relaxed">
+              Watch your 3D tooth map appear on our chairside screen in real time before treatment starts.
+            </p>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex-1 grid grid-cols-2 gap-4"
+            transition={{ delay: 0.1 }}
+            className="p-8 rounded-2xl bg-[#f5f5f7] border border-black/5"
           >
-            <div className="space-y-4 pt-12">
-              <div className="rounded-3xl overflow-hidden shadow-lg aspect-square">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Digital X-ray equipment"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA55Rj_SwmxhYUSXGb2g8P_kGf_guanRx2EB-VEzsa78L1R3SeAjCzoH9Ne75JmamVv-aiY3jUarGD6g36aOgGC9j2BbfOVidoxvKTOntEbo3H7XKPmxKY5EqW3ZWQJKg3sH1Li0IUsLJmwRS4sSxhpTcEXohko8GQR1ci__6X5BpmuOXXhhqxP6r18onYJ1LXg6En55t01UfbolHySAiYeUS4qh3PWiY7BpZbS3lNH5cZGqcCCVocT1bzBj_-IykHyeaqDxWPpp4c"
-                />
-              </div>
-              <div className="rounded-3xl overflow-hidden shadow-lg aspect-[3/4]">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="3D Scanner"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_DhsZld5bZaO4JlTuxDgnsQkoesHW-OQKAM-KpjiRxlPr-qbAIFnJ90JbbEy0hBemOqQRFZxU8ZQEZtCUQ9D21xmSFZOOCzanu4_iRFpkYxwKyhelZBTgbxdwppnXHsLBpDN40uuy28I7mH9UvfHfyZgit579znJXb8QXajXpus39rET4I_APxBtl8cnLPD0F_rrtmi-ZFpCptkBu_HYFjJUBVrwRBed-e7F9YJc8YA6gzFIk3jvwdSQ_V9RnPSVlkfvx1ksiAeU"
-                />
-              </div>
-            </div>
-            <div className="space-y-4">
-              <div className="rounded-3xl overflow-hidden shadow-lg aspect-[3/4]">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Dental Laboratory"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwbLi2O6AjWDJuVaTFko_rn7498cor2fwEWW4AZKzhYhGH8qHH-x8qcNJzcuy3ESS4HLq7H-Rn0fwV168sd3maoxSIN6y5MkybWwYdAkrEKZnWUIIAiYGaS9Age4VP0YQWLBgrlsld7BYddOnEfXlEmeauloD-3bqaTNWa5IhqdyrWxI5aOFzSGLoopniL7lgOy4zFZPJXuiXvBuu4VCTbEV5VEtkPhFV3kkdjhHLlAO662sav8tVKtmwlEmNFwbrt7KR6fHDItls"
-                />
-              </div>
-              <div className="rounded-3xl overflow-hidden shadow-lg aspect-square">
-                <img
-                  className="w-full h-full object-cover"
-                  alt="Dental laser equipment"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDctYTspJi6fBUCQnTmK8vNePuAPFZRJ2ZboB3xmZIgQ2sz2dzc1FZcBVTZrYka9kFCkvWs2vdiB-qEjMtgrOoicIMyBmtp4hhigHsW0ZwGblR8p3RnGC9-K8jOJHC9qs7_vzp_QLBNWVinLd9Wa8gHPbhKiC1lJr4i7y498k7mkv9Z2zht1HkmO9Be0Gr0ZvvkQqc_nAAH25Qb9ggqbwu9KSSOAFgUfYdwtXCVxWyXCQQiWYR4kUdjOwQFrSL0Z4JU0N35VlLDUIQ"
-                />
-              </div>
-            </div>
+            <span className="text-sm font-bold text-[#00685f] block mb-2">02 / Sub-Millimeter Fit</span>
+            <h4 className="text-lg font-bold text-[#1d1d1f] mb-2">Micrometric Precision</h4>
+            <p className="text-sm text-[#515154] leading-relaxed">
+              Custom aligners and crowns fit perfectly on the first try without painful adjustments.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="p-8 rounded-2xl bg-[#f5f5f7] border border-black/5"
+          >
+            <span className="text-sm font-bold text-[#00685f] block mb-2">03 / 100% Pain-Free</span>
+            <h4 className="text-lg font-bold text-[#1d1d1f] mb-2">Complete Comfort</h4>
+            <p className="text-sm text-[#515154] leading-relaxed">
+              A light wand gently glides over your teeth. Fast, clean, and completely non-invasive.
+            </p>
           </motion.div>
         </div>
+
       </div>
     </section>
   );
